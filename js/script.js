@@ -20,19 +20,16 @@ const addMarkToLIst = (markIndex, markTime) =>{
         marksList.innerHTML = `<p> Inicie o Cronômetro para<br>salvar!</p>`;        
     }else {          
         marksList.innerHTML += `<p>Marca ${markIndex}: ${formatTime(markTime)}</p>`
-        //const markItem = document.createElement('p');
-        //markItem.textContent = `Marca ${markIndex}: ${formatTime(markTime)}`;
-        //marksList.appendChild(markItem);
-
-    }
-    //marksList.innerHTML = ''; 
-    //marks= []
+    }    
 }
 
 const markTime = () => {
-    
+    if(timer > 0){
     marks.push(timer);
     addMarkToLIst(marks.length, timer);
+    }else{
+        alert("Você precisa iniciar o cronômetro antes de salvar um registro.");
+    }
 }
 
 const toggleTimer = () =>{
